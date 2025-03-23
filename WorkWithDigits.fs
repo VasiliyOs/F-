@@ -52,5 +52,8 @@ module WorkWithDigits
                 let newAcc = if condition lastDigit then operation acc lastDigit else acc
                 oper (num / 10) newAcc
         oper number accum
+
+    let countVzaimProstDel n =
+        obhodProstComp n (fun acc _ -> acc + 1) 0
          
     
