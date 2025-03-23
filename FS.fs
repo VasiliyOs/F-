@@ -114,5 +114,8 @@ let eulerNumber n =
 
          let sumDelOn3 = WorkWithDigits.sumDigitsDelOn3 (123456)
          Console.WriteLine("Сумма чисел, делящихся на 3: {0}", sumDelOn3)
+
+         let result = WorkWithDigits.findCoprimeDivisor 125 
+         Console.WriteLine("Делитель числа, взаимно простой с количеством цифр: {0}", result)
          
          0
