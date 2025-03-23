@@ -111,5 +111,8 @@ let eulerNumber n =
 
          let count = WorkWithDigits.countVzaimProstDel (n)
          Console.WriteLine("Количество взаимно простых чисел: {0}", count)
+
+         let sumDelOn3 = WorkWithDigits.sumDigitsDelOn3 (123456)
+         Console.WriteLine("Сумма чисел, делящихся на 3: {0}", sumDelOn3)
          
          0
