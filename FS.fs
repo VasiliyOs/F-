@@ -52,4 +52,11 @@ let respondToLanguage (language: string) =
          Console.WriteLine("Какой твой любимый язык программирования?")
          Console.ReadLine() |> respondToLanguage |> Console.WriteLine
 
+
+        let getResponse = respondToLanguage 
+        Console.WriteLine("Какой твой любимый язык программирования?")
+        let userLanguage = Console.ReadLine()
+        let response = getResponse(userLanguage)
+        Console.WriteLine(response)
+
          0
