@@ -66,5 +66,22 @@ module WorkWithDigits
                     else
                         oper (num / 10) acc
             oper number 0
+
+    let countDigits number =
+        let rec oper num acc =
+            if num = 0 then acc
+            else oper (num / 10) (acc + 1)
+        oper number 0
+
+    let findCoprimeDivisor number =
+        let numDigits = countDigits number
+        let rec oper divisor =
+            if divisor > number then 1
+            else
+                if number % divisor = 0 && nod divisor numDigits = 1 then
+                    divisor
+                else
+                    oper (divisor + 1)
+        oper 2 
          
     
