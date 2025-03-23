@@ -48,10 +48,8 @@ let respondToLanguage (language: string) =
          System.Console.WriteLine("Минимальная цифра больше 2: {0}", minDigit)
 
 
-         Console.WriteLine("Какой твой любимый язык программирования?")
-         let userLanguage = Console.ReadLine()
 
-         let response = respondToLanguage(userLanguage)
-         Console.WriteLine(response)
+         Console.WriteLine("Какой твой любимый язык программирования?")
+         Console.ReadLine() |> respondToLanguage |> Console.WriteLine
 
          0
