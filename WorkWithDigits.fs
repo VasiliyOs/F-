@@ -44,8 +44,13 @@ module WorkWithDigits
                 oper (num / 10) (operation acc lastDigit)
         oper number initialValue
 
-    let plus acc digit = 
-        acc + digit
-
+    let operation_on_digits_numbers_with_condition number operation accum condition =
+        let rec oper num acc =
+            if num = 0 then acc
+            else
+                let lastDigit = num % 10
+                let newAcc = if condition lastDigit then operation acc lastDigit else acc
+                oper (num / 10) newAcc
+        oper number accum
          
     
