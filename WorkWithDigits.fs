@@ -1,5 +1,5 @@
 module WorkWithDigits
-    let sum_digit_recursion_top number = 
+    let sum_digits_top number = 
     let rec sum_digit number cur_sum =
         if number = 0 then cur_sum
         else 
