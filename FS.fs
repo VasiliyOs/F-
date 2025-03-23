@@ -31,6 +31,10 @@ let main (args : string[]) =
     
     let vol_car = cyl_vol_car radius height
     printfn "Объем цилиндра кариров: %f" vol_car
-
+    
+    let number = 12345
+    let result = WorkWithDigits.sum_digit_recursion_top number
+    printfn "Сумма цифр равна %d" result
+    
     0
 
