@@ -30,4 +30,16 @@
          let maxResult = WorkWithDigits.operation_on_digits_numbers (number) (max_function) (0)
          System.Console.WriteLine("Максимальная цифра числа: {0}", maxResult)
 
+
+
+
+         let sumEvenDigits = operation_on_digits_numbers_with_condition (number) (sum_function) (0) (fun x -> x % 2 = 0)
+         System.Console.WriteLine("Сумма четных цифр числа: {0}", sumEvenDigits)
+
+         let proizDigits = operation_on_digits_numbers_with_condition (number) (proiz_function) (1) (fun x -> x > 5)
+         System.Console.WriteLine("Произведение цифр больше 5: {0}", proizDigits)
+
+         let minDigit = operation_on_digits_numbers_with_condition (number) (min_function) (9) (fun x -> x > 2)
+         System.Console.WriteLine("Минимальная цифра больше 2: {0}", minDigit)
+
          0
