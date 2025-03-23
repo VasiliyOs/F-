@@ -35,3 +35,17 @@ module WorkWithDigits
         match flag with
             true -> sum_digits_top
             | false -> factorial_top
+
+    let operation_on_digits_numbers number operation initialValue =
+        let rec oper num acc =
+            if num = 0 then acc
+            else
+                let lastDigit = num % 10
+                oper (num / 10) (operation acc lastDigit)
+        oper number initialValue
+
+    let plus acc digit = 
+        acc + digit
+
+         
+    
