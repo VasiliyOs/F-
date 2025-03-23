@@ -2,7 +2,20 @@ let respondToLanguage (language: string) =
     match language.ToLower() with
     | "f#" | "prolog" -> "Ты подлиза!"
     | _ -> "Неплохой выбор, но F# и Prolog лучше!"
+    
+let getFunctionByNumber = function
+    | 1 -> WorkWithDigits.countVzaimProstComp
+    | 2 -> WorkWithDigits.sumDigitsDelOn3
+    | 3 -> WorkWithDigits.findCoprimeDivisor
+    | _ -> failwith "Неверный номер функции"
 
+let WithCurrying (funcNumber, arg) =
+    let selectedFunction = getFunctionByNumber funcNumber
+    selectedFunction arg
+
+let WithSuperpos (funcNumber, arg) =
+    (getFunctionByNumber >> (fun f -> f arg)) funcNumber
+    
 [<EntryPoint>]
      let main argv =
          let number = 12345
@@ -90,5 +103,18 @@ let respondToLanguage (language: string) =
 
          let result = WorkWithDigits.findCoprimeDivisor 125 
          Console.WriteLine("Делитель числа, взаимно простой с количеством цифр: {0}", result)
+
+
+         Console.WriteLine("Введите кортеж (номер функции, аргумент):")
+         let input = Console.ReadLine()
+         let parsedInput = input.Split(',') |> Array.map int
+         let funcNumber = parsedInput.[0]
+         let arg = parsedInput.[1]
+        
+         let resultCurrying = WithCurrying (funcNumber, arg)
+         Console.WriteLine("Результат (каррирование): {0}", resultCurrying)
+        
+         let resultSuperpos = WithSuperpos (funcNumber, arg)
+         Console.WriteLine("Результат (суперпозиция):{0}", resultSuperpos)
          
          0
